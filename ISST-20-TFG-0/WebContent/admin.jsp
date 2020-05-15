@@ -28,6 +28,6 @@
 	<%@ include file="FormCreaProfesor.jsp"%>
 
 	<h2>Salir de la aplicación</h2>
-	<%@ include file="FormLogout.jsp" %>
+	<%@ include file="FormLogout.jsp"%>
 </body>
 </html>
