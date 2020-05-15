@@ -9,6 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+   <h2>Hasta luego!</h2>
+	<form action="FormLogoutServlet">
+		<button type="submit">Logout</button>
+	</form>
 
 </body>
 </html>

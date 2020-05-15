@@ -50,7 +50,7 @@ public class FormLoginServlet extends HttpServlet {
 			req.getSession().setAttribute("admin", true);
 			req.getSession().setAttribute("profesores", profesores);
 			req.getSession().setAttribute("tfgs", tfgs);
-			getServletContext().getRequestDispatcher("/admin.jsp").forward(req,resp);
+			getServletContext().getRequestDispatcher("/Admin.jsp").forward(req,resp);
 		}
 		//Prioridad 2, login con la cuenta de profesor, mira su tfg.
 		else if ( null != tfg ) {
