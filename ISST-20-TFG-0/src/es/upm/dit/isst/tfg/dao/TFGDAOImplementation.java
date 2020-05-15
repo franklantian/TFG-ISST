@@ -7,7 +7,6 @@ import javax.persistence.Query;
 
 import org.hibernate.Session;
 
-import es.upm.dit.isst.tfg.model.Professor;
 import es.upm.dit.isst.tfg.model.TFG;
 
 public class TFGDAOImplementation implements TFGDAO {
