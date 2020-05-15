@@ -32,7 +32,9 @@ public class FormLogoutServlet extends HttpServlet {
 		req.getSession().removeAttribute("tfgs"); 
 		req.getSession().removeAttribute("tfg"); 
 		req.getSession().removeAttribute("profesor"); 
-		req.getSession().removeAttribute("profesores"); 
+		req.getSession().removeAttribute("profesores");
+		//kill the session
+		req.getSession().invalidate();
 		getServletContext().getRequestDispatcher("/index.html").forward(req,resp);
 	}
 

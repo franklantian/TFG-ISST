@@ -6,7 +6,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CrearProfesores</title>
 </head>
 <body>
 	<form action="FormCreaProfesorServlet">
