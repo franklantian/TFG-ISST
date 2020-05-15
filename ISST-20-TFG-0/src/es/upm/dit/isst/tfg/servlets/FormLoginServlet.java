@@ -44,16 +44,21 @@ public class FormLoginServlet extends HttpServlet {
 		List<TFG> tfgs = (List<TFG>) TFGDAOImplementation.getInstance().readAll();
 		TFG tfg = TFGDAOImplementation.getInstance().login(email, password);
 		Professor professor = ProfessorDAOImplementation.getInstance().login(email, password);
-
+		
+		//Prioridad 1 ,admin=root,password=root
 		if( ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password) ) {
 			req.getSession().setAttribute("admin", true);
 			req.getSession().setAttribute("profesores", profesores);
 			req.getSession().setAttribute("tfgs", tfgs);
 			getServletContext().getRequestDispatcher("/admin.jsp").forward(req,resp);
-		} else if ( null != tfg ) {
+		}
+		//Prioridad 2, login con la cuenta de profesor, mira su tfg.
+		else if ( null != tfg ) {
 			req.getSession().setAttribute("tfg", tfg);
 			getServletContext().getRequestDispatcher("/TFG.jsp").forward(req,resp); //Si es un profesorm get su tfg
-		} else if ( null != professor ) {
+		} 
+		//Prioridad 3, login con la cuenta no es profesor ni admin,get inicialmente los datos.
+		else if ( null != professor ) {
 			req.getSession().setAttribute("profesor", ProfessorDAOImplementation.getInstance().read(professor.getEmail()));
 			getServletContext().getRequestDispatcher("/Profesor.jsp").forward(req,resp);
 		} else {
