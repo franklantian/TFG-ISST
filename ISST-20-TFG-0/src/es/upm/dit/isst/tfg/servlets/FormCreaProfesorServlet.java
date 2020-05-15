@@ -50,7 +50,7 @@ public class FormCreaProfesorServlet extends HttpServlet {
 		lp.add (professor);
 		//Actualizar los session de professor
 		req.getSession().setAttribute("profesores", lp); 
-		getServletContext().getRequestDispatcher("/admin.jsp").forward(req,resp);
+		getServletContext().getRequestDispatcher("/Admin.jsp").forward(req,resp);
 
 	}
 
